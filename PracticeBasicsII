@@ -1,0 +1,59 @@
+import java.util.*;
+/**
+ * Write a description of class PracticeBasicsII here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class PracticeBasicsII
+{
+    public static int[] sillyNumbers()
+    {
+        int[] nums = PracticeBasicsI.funnyNumbers(35, 180, 220);
+        PracticeBasicsI.printNums(nums);
+        for(int i = 0; i < nums.length; i++)
+        {
+            nums[i] *= -1;
+        }
+        System.out.println();
+        PracticeBasicsI.printNums(nums);
+        return nums;
+    }
+
+    public static void avgNums(int[] arr)
+    {
+        int avg = Math.round((float)PracticeBasicsI.avgNumbers(arr));
+        arr[0] = avg;
+        arr[arr.length - 1] = avg;
+    }
+
+    public static void higher(int [] arr)
+    {
+        int sum = 0;
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(arr[i] < arr[arr.length -1])
+            {
+                arr[i] = 21;
+            }
+            sum += arr[i];
+        }
+        System.out.println(sum);
+    }
+    
+    public static ArrayList<Integer> oddNums(int [] arr)
+    {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        ArrayList<Integer> orig = new ArrayList<Integer>();
+        orig = PracticeBasicsI.removeDuplicates(arr);
+        
+        for(int i : orig)
+        {
+            if(i % 2 != 0)
+            {
+                nums.add(i);
+            }
+        }
+        return nums;
+    }
+}
